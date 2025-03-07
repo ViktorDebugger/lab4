@@ -96,7 +96,7 @@ const Basket = () => {
       }
     }
 
-    navigate("/orders");
+    navigate("/lab4/orders");
   };
 
   const incrementBasketItem = (id) => {
@@ -172,7 +172,7 @@ const Basket = () => {
                   </button>
                 ) : (
                   <Link
-                    to="/login"
+                    to="/lab4/login"
                     className="rounded-lg border-[2px] border-black px-6 py-2 transition duration-300 ease-in-out hover:bg-black hover:text-white"
                   >
                     Замовити

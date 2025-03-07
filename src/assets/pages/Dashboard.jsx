@@ -17,7 +17,7 @@ const Dashboard = () => {
 
     try {
       await logout();
-      navigate("/");
+      navigate("/lab4");
     } catch {
       setError("Не вдалося вийти з системи");
     }
@@ -39,7 +39,7 @@ const Dashboard = () => {
         </p>
         <section className="flex flex-col items-center md:flex-row justify-center gap-8 my-8">
           <Link
-            to="/update-profile"
+            to="/lab4/update-profile"
             className="block w-full md:w-[60%] rounded-lg bg-blue-600 px-4 py-2.5 text-center text-white hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition duration-300 ease-in-out"
           >
             Оновити профіль

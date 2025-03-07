@@ -19,7 +19,7 @@ function App() {
         <Routes>
           {/* Аутентифікаційні маршрути */}
           <Route
-            path="/signup"
+            path="/lab4/signup"
             element={
               <div className="flex min-h-screen items-center justify-center">
                 <div className="w-full max-w-md p-8">
@@ -29,7 +29,7 @@ function App() {
             }
           />
           <Route
-            path="/login"
+            path="/lab4/login"
             element={
               <div className="flex min-h-screen items-center justify-center">
                 <div className="w-full max-w-md p-8">
@@ -39,7 +39,7 @@ function App() {
             }
           />
           <Route
-            path="/forgot-password"
+            path="/lab4/forgot-password"
             element={
               <div className="flex min-h-screen items-center justify-center">
                 <div className="w-full max-w-md p-8">
@@ -49,7 +49,7 @@ function App() {
             }
           />
           <Route
-            path="/update-profile"
+            path="/lab4/update-profile"
             element={
               <div className="flex min-h-screen items-center justify-center">
                 <div className="w-full max-w-md p-8">
@@ -63,7 +63,7 @@ function App() {
 
           {/* Основні маршрути */}
           <Route
-            path="/"
+            path="/lab4"
             element={
               <div className="flex min-h-screen flex-col">
                 <Header />
@@ -73,7 +73,7 @@ function App() {
             }
           />
           <Route
-            path="/basket"
+            path="/lab4/basket"
             element={
               <div className="flex min-h-screen flex-col">
                 <Header />
@@ -83,7 +83,7 @@ function App() {
             }
           />
           <Route
-            path="/orders"
+            path="/lab4/orders"
             element={
               <div className="flex min-h-screen flex-col">
                 <Header />
@@ -93,7 +93,7 @@ function App() {
             }
           />
           <Route
-            path="/dashboard"
+            path="/lab4/dashboard"
             element={
               <div className="flex min-h-screen flex-col">
                 <Header />

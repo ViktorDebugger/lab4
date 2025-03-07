@@ -44,27 +44,27 @@ const Header = () => {
         <nav>
           <ul className="hidden items-center gap-2 text-[20px] sm:flex lg:gap-16">
             <li>
-              <Link to="/" className={getLinkClasses("/")}>
+              <Link to="/lab4" className={getLinkClasses("/lab4")}>
                 Меню
               </Link>
             </li>
             <li>
-              <Link to="/basket" className={getLinkClasses("/basket")}>
+              <Link to="/lab4/basket" className={getLinkClasses("/lab4/basket")}>
                 Кошик
               </Link>
             </li>
             <li>
-              <Link to="/orders" className={getLinkClasses("/orders")}>
+              <Link to="/lab4/orders" className={getLinkClasses("/lab4/orders")}>
                 Мої замовлення
               </Link>
             </li>
             <li>
               {currentUser ? (
-                <Link to="/dashboard" className={getLinkClasses("/dashboard")}>
+                <Link to="/lab4/dashboard" className={getLinkClasses("/lab4/dashboard")}>
                   <FontAwesomeIcon icon={faUser} />
                 </Link>
               ) : (
-                <Link to="/login" className={getLinkClasses("/login")}>
+                <Link to="/lab4/login" className={getLinkClasses("/lab4/login")}>
                   <FontAwesomeIcon icon={faRightToBracket} />
                 </Link>
               )}
@@ -88,8 +88,8 @@ const Header = () => {
           <ul className="flex w-[80%] flex-col gap-4">
             <li>
               <Link
-                to="/"
-                className={getMobileLinkClasses("/")}
+                to="/lab4"
+                className={getMobileLinkClasses("/lab4")}
                 onClick={() => setOpenSidebar(false)}
               >
                 Меню
@@ -97,8 +97,8 @@ const Header = () => {
             </li>
             <li>
               <Link
-                to="/basket"
-                className={getMobileLinkClasses("/basket")}
+                to="/lab4/basket"
+                className={getMobileLinkClasses("/lab4/basket")}
                 onClick={() => setOpenSidebar(false)}
               >
                 Кошик
@@ -106,8 +106,8 @@ const Header = () => {
             </li>
             <li>
               <Link
-                to="/orders"
-                className={getMobileLinkClasses("/orders")}
+                to="/lab4/orders"
+                className={getMobileLinkClasses("/lab4/orders")}
                 onClick={() => setOpenSidebar(false)}
               >
                 Мої замовлення
@@ -116,8 +116,8 @@ const Header = () => {
             <li>
               {currentUser ? (
                 <Link
-                  to="/dashboard"
-                  className={getMobileLinkClasses("/dashboard")}
+                  to="/lab4/dashboard"
+                  className={getMobileLinkClasses("/lab4/dashboard")}
                   onClick={() => setOpenSidebar(false)}
                 >
                   <FontAwesomeIcon icon={faUser} />
@@ -125,8 +125,8 @@ const Header = () => {
                 </Link>
               ) : (
                 <Link
-                  to="/login"
-                  className={getMobileLinkClasses("/login")}
+                  to="/lab4/login"
+                  className={getMobileLinkClasses("/lab4/login")}
                   onClick={() => setOpenSidebar(false)}
                 >
                   <FontAwesomeIcon icon={faRightToBracket} />

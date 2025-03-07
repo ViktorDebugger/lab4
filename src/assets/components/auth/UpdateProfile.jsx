@@ -37,7 +37,7 @@ const UpdateProfile = () => {
 
     Promise.all(promises)
       .then(() => {
-        navigate("/dashboard");
+        navigate("/lab4/dashboard");
       })
       .catch(() => {
         setError("Не вдалося оновити обліковий запис");
@@ -116,7 +116,7 @@ const UpdateProfile = () => {
       </div>
       <div className="mt-4 text-center">
         <Link
-          to="/dashboard"
+          to="/lab4/dashboard"
           className="inline-block w-full md:w-[60%] bg-white px-4 py-2.5 rounded-lg hover:bg-gray-100 transition duration-300 ease-in-out text-blue-500"
         >
           Скасувати

@@ -27,7 +27,7 @@ const Signup = () => {
       setError("");
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
-      navigate("/");
+      navigate("/lab4");
     } catch (error) {
       console.error(error);
       setError("Не вдалося створити обліковий запис");
@@ -109,13 +109,13 @@ const Signup = () => {
         <p>Вже маєте обліковий запис?</p>
         <div className="mt-2 flex flex-col items-center">
           <Link
-            to="/login"
+            to="/lab4/login"
             className="inline-block w-full md:w-[60%] bg-white px-4 py-2.5 rounded-lg hover:bg-gray-100 transition duration-300 ease-in-out text-blue-500"
           >
             Увійти
           </Link>
           <Link
-            to="/"
+            to="/lab4"
             className="inline-block w-full md:w-[60%] bg-white px-4 py-2.5 rounded-lg hover:bg-gray-100 transition duration-300 ease-in-out text-blue-500 mt-12"
           >
             Повернутись на головну

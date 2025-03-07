@@ -74,7 +74,7 @@ const ForgotPassword = () => {
       <div className="mt-4 text-center">
         <div className="flex flex-col items-center gap-4">
           <Link
-            to="/login"
+            to="/lab4/login"
             className="inline-block w-full md:w-[60%] bg-white px-4 py-2.5 rounded-lg hover:bg-gray-100 transition duration-300 ease-in-out text-blue-500"
           >
             Увійти
@@ -82,7 +82,7 @@ const ForgotPassword = () => {
           <div className="flex flex-col items-center">
             <p>Немає облікового запису?</p>
             <Link
-              to="/signup"
+              to="/lab4/signup"
               className="inline-block w-full bg-white px-4 py-2.5 rounded-lg hover:bg-gray-100 transition duration-300 ease-in-out text-blue-500 mt-2"
             >
               Зареєструватися

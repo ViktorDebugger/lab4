@@ -4,7 +4,7 @@ import { useAuth } from "./../../contexts/AuthContext.jsx";
 const PrivateRoute = ({ children }) => {
   const { currentUser } = useAuth();
 
-  return currentUser ? children : <Navigate to="/" />;
+  return currentUser ? children : <Navigate to="/lab4" />;
 };
 
 export default PrivateRoute;

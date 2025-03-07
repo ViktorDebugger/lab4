@@ -22,7 +22,7 @@ const Login = () => {
       setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-      navigate("/");
+      navigate("/lab4");
     } catch {
       setError("Не вдалося увійти в систему");
     }
@@ -85,7 +85,7 @@ const Login = () => {
         </form>
         <div className="mt-3 text-center">
           <Link
-            to="/forgot-password"
+            to="/lab4/forgot-password"
             className="text-blue-600 hover:text-blue-800"
           >
             Забули пароль?
@@ -96,13 +96,13 @@ const Login = () => {
         <p>Немає облікового запису?</p>
         <div className="mt-2 flex flex-col items-center">
           <Link
-            to="/signup"
+            to="/lab4/signup"
             className="inline-block w-full md:w-[60%] bg-white px-4 py-2.5 rounded-lg hover:bg-gray-100 transition duration-300 ease-in-out text-blue-500"
           >
             Зареєструватися
           </Link>
           <Link
-            to="/"
+            to="/lab4"
             className="inline-block w-full md:w-[60%] bg-white px-4 py-2.5 rounded-lg hover:bg-gray-100 transition duration-300 ease-in-out text-blue-500 mt-12"
           >
             Повернутись на головну

@@ -27,11 +27,6 @@ const Orders = () => {
     fetchOrders();
   }, [currentUser]);
 
-  const sortedOrders = orders.sort(
-    (a, b) => b.orderStartDatetime.toDate() - a.orderStartDatetime.toDate()
-  );
-  console.log(orders);
-
   return (
     <main className="mx-auto w-full flex-grow max-w-[1490px] flex-1 rounded-lg py-4 text-center text-[30px]">
       <section className="w-full rounded-lg bg-white py-2 text-[30px]">
@@ -41,9 +36,14 @@ const Orders = () => {
       <section className="mt-4 max-w-[1490px] 2xl:mx-auto">
         {orders.length ? (
           <ul className="grid grid-cols-1 gap-2">
-            {sortedOrders.map((order) => (
-              <Order key={order.orderId} order={order} />
-            ))}
+            {orders
+              .sort(
+                (a, b) =>
+                  b.orderStartDatetime.toDate() - a.orderStartDatetime.toDate()
+              )
+              .map((order) => (
+                <Order key={order.orderId} order={order} />
+              ))}
           </ul>
         ) : (
           <div className="h-[380px] text-white border-4 border-white rounded-lg flex items-center justify-center">

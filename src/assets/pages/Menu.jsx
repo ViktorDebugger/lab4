@@ -12,7 +12,7 @@ import {
 } from "../db/basket.js";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../js/firebase.js";
-
+ 
 const Menu = () => {
   useTitle("Меню");
   useBackgroundColor("bg-red-500");

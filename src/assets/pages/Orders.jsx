@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import { useAuth } from "./../contexts/AuthContext.jsx";
-import { loadOrdersFromFirestore } from "../db/orders.js";
-import Order from "../components/Order.jsx";
 import { useBackgroundColor } from "./../hooks/useBackgroundColor.jsx";
 import { useTitle } from "./../hooks/useTitle.jsx";
+import { useAuth } from "./../contexts/AuthContext.jsx";
+
+import Order from "../components/Order.jsx";
+
+import { loadOrdersFromFirestore, deleteOrderFromFirestore } from "../db/orders.js";
 
 const Orders = () => {
   useTitle("Замовлення");
@@ -27,6 +29,15 @@ const Orders = () => {
     fetchOrders();
   }, [currentUser]);
 
+  const removeOrder = async (orderId) => {
+    try {
+      await deleteOrderFromFirestore(currentUser.uid, orderId);
+      setOrders(orders => orders.filter((order) => order.orderId !== orderId));
+    } catch (error) {
+      console.error("Помилка при видаленні замовлення:", error);
+    }
+  };
+
   return (
     <main className="mx-auto w-full flex-grow max-w-[1490px] flex-1 rounded-lg py-4 text-center text-[30px]">
       <section className="w-full rounded-lg bg-white py-2 text-[30px]">
@@ -42,7 +53,7 @@ const Orders = () => {
                   b.orderStartDatetime.toDate() - a.orderStartDatetime.toDate()
               )
               .map((order) => (
-                <Order key={order.orderId} order={order} />
+                <Order key={order.orderId} order={order} removeOrder={removeOrder} />
               ))}
           </ul>
         ) : (

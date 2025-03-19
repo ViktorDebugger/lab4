@@ -1,9 +1,11 @@
-import BasketItem from "./../components/BasketItem.jsx";
 import { useEffect, useState } from "react";
 import { useBackgroundColor } from "./../hooks/useBackgroundColor.jsx";
 import { useTitle } from "./../hooks/useTitle.jsx";
-import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "./../contexts/AuthContext.jsx";
+import { useNavigate, Link } from "react-router-dom";
+
+import BasketItem from "./../components/BasketItem.jsx";
+
 import {
   loadBasketFromFirestore,
   saveBasketToFirestore,
@@ -17,7 +19,6 @@ const Basket = () => {
   const navigate = useNavigate();
   const { currentUser } = useAuth();
   const [basket, setBasket] = useState([]);
-  const [orders, setOrders] = useState([]);
 
   useEffect(() => {
     const loadBasket = async () => {
@@ -37,21 +38,6 @@ const Basket = () => {
     loadBasket();
   }, [currentUser]);
 
-  useEffect(() => {
-    const loadOrders = async () => {
-      if (currentUser) {
-        try {
-          const userOrders = await loadOrdersFromFirestore(currentUser.uid);
-          setOrders(userOrders);
-        } catch (error) {
-          console.error("Помилка завантаження замовлень з Firestore:", error);
-        }
-      }
-    };
-
-    loadOrders();
-  }, [currentUser]);
-
   const updateBasket = async (newBasket) => {
     setBasket(newBasket);
     if (currentUser) {
@@ -69,7 +55,6 @@ const Basket = () => {
     if (!currentUser) return;
 
     const newOrder = {
-      orderId: orders.length + 1,
       items: basket,
       orderStartDatetime: new Date(),
       totalPrice: basket.reduce(
@@ -77,7 +62,7 @@ const Basket = () => {
         0
       ),
       totalCount: basket.reduce((accum, cur) => accum + cur.count, 0),
-      orderEndDatetime: new Date(new Date().getTime() + 30 * 60000),
+      orderEndDatetime: new Date(new Date().getTime() + 30 * 6000),
     };
 
     try {

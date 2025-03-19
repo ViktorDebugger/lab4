@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
+import { useBackgroundColor } from "./../hooks/useBackgroundColor.jsx";
+import { useTitle } from "./../hooks/useTitle.jsx";
+import { useAuth } from "./../contexts/AuthContext.jsx";
+
 import DishCard from "./../components/DishCard.jsx";
 import CategorySelect from "./../components/CategorySelect.jsx";
 import SearchInput from "./../components/SearchInput.jsx";
 import Pagination from "./../components/Pagination.jsx";
-import { useBackgroundColor } from "./../hooks/useBackgroundColor.jsx";
-import { useTitle } from "./../hooks/useTitle.jsx";
-import { useAuth } from "./../contexts/AuthContext.jsx";
+
 import {
   saveBasketToFirestore,
   loadBasketFromFirestore,
@@ -137,7 +139,6 @@ const Menu = () => {
   };
 
   const totalPages = Math.ceil(filteredDishes.length / itemsPerPage);
-  console.log(dishes);
   return (
     <main className="mx-auto py-4 flex-grow w-full max-w-[1490px] flex-1 rounded-lg text-center text-[20px]">
       <section className="w-full rounded-lg bg-white py-2 text-[30px]">

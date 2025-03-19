@@ -1,6 +1,6 @@
 const DishCard = ({ dish, handleOrder, isInBasket }) => {
   return (
-    <li className="col-span-1 mx-auto h-[500px] w-[350px] rounded-lg bg-white shadow-2xl">
+    <li className="col-span-1 mx-auto h-[500px] max-w-[350px] rounded-lg bg-white shadow-2xl duration-300 ease-in-out transition-transform hover:bg-red-100 scale-100 hover:scale-[1.01]">
       <div className="mx-auto w-[80%]">
         <img
           src={dish.image}
